@@ -39,7 +39,7 @@ Evencio is a comprehensive event management platform designed to help teams crea
 2. **Install Dependencies**:
 
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 3. **Set Up Environment Variables**:
@@ -68,16 +68,7 @@ Evencio is a comprehensive event management platform designed to help teams crea
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) for more information.
-
-## Contact
-
-For any questions or feedback, please contact [Antonio Erdeljac](mailto:your-email@example.com).
-
 ## Screenshots
-
 
 ![Screenshot 2025-03-30 204219](https://github.com/user-attachments/assets/ba994755-660b-41c2-9d5b-2e3910b20a57)
 ![Screenshot 2025-03-30 204226](https://github.com/user-attachments/assets/831ba1ac-bcac-49d6-999f-984ad4570620)
