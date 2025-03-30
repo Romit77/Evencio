@@ -20,6 +20,7 @@ Evencio is a comprehensive event management platform designed to help teams crea
 - **TypeScript**
 - **Tailwind CSS**
 - **Prisma**
+- **OpenAI API**
 - **PlanetScale**
 - **MySQL**
 - **Stripe**
@@ -77,6 +78,7 @@ For any questions or feedback, please contact [Antonio Erdeljac](mailto:your-ema
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/yourusername/evencio/main/screenshots/1.PNG)
-![App Screenshot](https://raw.githubusercontent.com/yourusername/evencio/main/screenshots/2.PNG)
-![App Screenshot](https://raw.githubusercontent.com/yourusername/evencio/main/screenshots/3.PNG)
+
+![Screenshot 2025-03-30 204219](https://github.com/user-attachments/assets/ba994755-660b-41c2-9d5b-2e3910b20a57)
+![Screenshot 2025-03-30 204226](https://github.com/user-attachments/assets/831ba1ac-bcac-49d6-999f-984ad4570620)
+![Screenshot 2025-03-30 204259](https://github.com/user-attachments/assets/671594bf-5669-4571-a0d1-8df231a7b6e6)
