@@ -20,7 +20,12 @@ export const Navbar = () => {
           >
             <Link href="/sign-in">Login</Link>
           </Button>
-          <Button size="sm" asChild data-testid="navbar_get_taskify_button">
+          <Button
+            size="sm"
+            className="bg-violet-600 hover:bg-violet-700"
+            asChild
+            data-testid="navbar_get_taskify_button"
+          >
             <Link href="/sign-up">Get Evencio for free</Link>
           </Button>
         </div>
