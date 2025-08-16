@@ -6,6 +6,31 @@ html,
 body,
 :root {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix navbar gap issues and scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3.5rem; /* Account for fixed navbar */
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure fixed navbar doesn't cause layout shifts */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent content jumping on scroll */
+* {
+  box-sizing: border-box;
 }
 
 @layer base {
