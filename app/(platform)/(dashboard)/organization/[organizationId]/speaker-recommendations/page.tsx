@@ -84,60 +84,6 @@ export default function JudgeRecommendation() {
   const budgetValue = budget ? parseFloat(budget) * USD_TO_INR : undefined;
 
   return (
-<<<<<<< HEAD
-    <div className="bg-gray-50 min-h-[calc(100vh-3.5rem)]">
-      <div className="space-y-6 p-6">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Search Existing Judges
-          </h2>
-          <form onSubmit={handleDbSearch} className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Expertise
-                </label>
-                <input
-                  type="text"
-                  value={expertise}
-                  onChange={(e) => setExpertise(e.target.value)}
-                  className="w-full p-2 border rounded-md text-gray-800 focus:ring-2 focus:ring-blue-500"
-                  placeholder="e.g., AI, Blockchain"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Budget (₹)
-                </label>
-                <input
-                  type="number"
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
-                  className="w-full p-2 border rounded-md text-gray-800 focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter maximum hourly rate in INR"
-                />
-              </div>
-            </div>
-            <button
-              type="submit"
-              disabled={dbLoading || !expertise}
-              className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
-            >
-              {dbLoading ? "Searching..." : "Search Database"}
-            </button>
-          </form>
-
-          <div className="mt-6">
-            {dbLoading ? (
-              <p className="text-gray-600">Loading judges from database...</p>
-            ) : dbJudges.length > 0 ? (
-              <JudgeList
-                judges={dbJudges}
-                budget={budgetValue}
-                title="Judges Found in Database"
-                currency="INR"
-=======
     <div className="space-y-6 p-6">
       <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
@@ -156,7 +102,6 @@ export default function JudgeRecommendation() {
                 className="w-full p-2 border rounded-md text-gray-800 focus:ring-2 focus:ring-blue-500"
                 placeholder="e.g., AI, Blockchain"
                 required
->>>>>>> c562f143de30bc725a5000e67ff4599268a2efeb
               />
             </div>
             <div>
