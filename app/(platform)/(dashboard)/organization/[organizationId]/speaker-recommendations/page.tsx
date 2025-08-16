@@ -84,7 +84,7 @@ export default function JudgeRecommendation() {
   const budgetValue = budget ? parseFloat(budget) * USD_TO_INR : undefined;
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 min-h-[calc(100vh-3.5rem)]">
       <div className="space-y-6 p-6">
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
