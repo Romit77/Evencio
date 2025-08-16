@@ -10,7 +10,6 @@ body,
   padding: 0;
 }
 
-/* Lenis smooth scroll styles */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -32,9 +31,9 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Fix navbar gap issues and scroll behavior */
 html {
-  scroll-padding-top: 3.5rem; /* Account for fixed navbar */
+  scroll-padding-top: 3.5rem;
+  overflow-x: hidden;
 }
 
 body {
@@ -43,7 +42,15 @@ body {
   padding: 0;
 }
 
-/* Ensure fixed navbar doesn't cause layout shifts */
+* {
+  scroll-behavior: smooth;
+}
+
+html.lenis * {
+  scroll-behavior: auto;
+}
+
+/* Navigation styles */
 nav[class*="fixed"] {
   position: fixed;
   top: 0;
@@ -52,7 +59,6 @@ nav[class*="fixed"] {
   z-index: 50;
 }
 
-/* Prevent content jumping on scroll */
 * {
   box-sizing: border-box;
 }

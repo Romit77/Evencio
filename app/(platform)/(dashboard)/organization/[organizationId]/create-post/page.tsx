@@ -50,7 +50,6 @@ export default function PostsPage() {
       if (response.ok) {
         const { post } = await response.json();
 
-        // Verify that the post has a valid imageUrl before adding to state
         if (post && post.imageUrl) {
           setPosts((prevPosts) => [post, ...prevPosts]);
           e.currentTarget.reset();
@@ -118,7 +117,6 @@ export default function PostsPage() {
         </button>
       </form>
 
-      {/* Post Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {posts.map((post) => (
           <div
@@ -131,12 +129,13 @@ export default function PostsPage() {
             </h2>
             {post.imageUrl ? (
               <div className="relative w-full h-40">
-                <img
+                <Image
                   src={post.imageUrl}
                   alt="Poster"
+                  width={400}
+                  height={160}
                   className="w-full h-40 object-cover rounded"
                   onError={(e) => {
-                    // Fallback for image loading errors
                     (e.target as HTMLImageElement).src =
                       "/placeholder-image.jpg";
                   }}
@@ -169,9 +168,11 @@ export default function PostsPage() {
               {selectedPost.content || "No content available"}
             </p>
             {selectedPost.imageUrl ? (
-              <img
+              <Image
                 src={selectedPost.imageUrl}
                 alt="Poster"
+                width={400}
+                height={224}
                 className="w-full h-56 object-cover rounded mb-4"
                 onError={(e) => {
                   // Fallback for image loading errors

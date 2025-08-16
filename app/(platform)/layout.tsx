@@ -2,7 +2,13 @@ import { ModalProvider } from "@/components/providers/modal-provider";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
-import { Chatbot } from "@/components/chatbot/chatbot"; // Ensure the casing matches your file name
+import { Suspense, lazy } from "react";
+
+const Chatbot = lazy(() =>
+  import("@/components/chatbot/chatbot").then((module) => ({
+    default: module.Chatbot,
+  }))
+);
 
 const PlatformLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -11,7 +17,13 @@ const PlatformLayout = ({ children }: { children: React.ReactNode }) => {
         <Toaster />
         <ModalProvider />
         {children}
-        <Chatbot /> {/* Moved inside the providers */}
+        <Suspense
+          fallback={
+            <div className="fixed bottom-4 right-4 w-12 h-12 bg-gray-200 rounded-full animate-pulse" />
+          }
+        >
+          <Chatbot />
+        </Suspense>
       </QueryProvider>
     </ClerkProvider>
   );

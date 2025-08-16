@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MessageCircle, ImageIcon, Download } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Board {
   id: string;
@@ -475,9 +476,11 @@ export const Chatbot = () => {
                             {msg.message}
                           </p>
                           <div className="border-2 border-gray-200 rounded-xl overflow-hidden bg-white shadow-lg transform hover:scale-[1.01] transition-transform duration-200">
-                            <img
+                            <Image
                               src={msg.imageUrl}
                               alt="Generated poster"
+                              width={400}
+                              height={350}
                               className="w-full h-auto max-h-[350px] object-cover"
                               onError={(e) => {
                                 (e.target as HTMLImageElement).src =
