@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 
 import { ActionState, FieldErrors } from "@/lib/create-safe-action";
 
@@ -23,8 +23,17 @@ export const useAction = <TInput, TOutput>(
   const [data, setData] = useState<TOutput | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  // Prevent multiple simultaneous calls
+  const isExecutingRef = useRef<boolean>(false);
+
   const execute = useCallback(
     async (input: TInput) => {
+      // Prevent multiple simultaneous executions
+      if (isExecutingRef.current) {
+        return;
+      }
+
+      isExecutingRef.current = true;
       setIsLoading(true);
 
       try {
@@ -47,6 +56,7 @@ export const useAction = <TInput, TOutput>(
         }
       } finally {
         setIsLoading(false);
+        isExecutingRef.current = false;
         options.onComplete?.();
       }
     },

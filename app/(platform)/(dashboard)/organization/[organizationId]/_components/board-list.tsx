@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { HelpCircle, User2 } from "lucide-react";
+import { memo } from "react";
 
 import { db } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -12,7 +13,7 @@ import { MAX_FREE_BOARDS } from "@/constants/boards";
 import { getAvailableCount } from "@/lib/org-limit";
 import { checkSubscription } from "@/lib/subscription";
 
-export const BoardList = async () => {
+const BoardListComponent = async () => {
   const { orgId } = auth();
 
   if (!orgId) {
@@ -75,7 +76,7 @@ export const BoardList = async () => {
   );
 };
 
-BoardList.Skeleton = function SkeletonBoardList() {
+const BoardListSkeleton = function SkeletonBoardList() {
   return (
     <div className="grid gird-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
       <Skeleton className="aspect-video h-full w-full p-2" />
@@ -89,3 +90,7 @@ BoardList.Skeleton = function SkeletonBoardList() {
     </div>
   );
 };
+
+export const BoardList = Object.assign(memo(BoardListComponent), {
+  Skeleton: BoardListSkeleton,
+});

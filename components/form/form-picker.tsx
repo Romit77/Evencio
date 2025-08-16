@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Check, Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 import { cn } from "@/lib/utils";
 import { unsplash } from "@/lib/unsplash";
@@ -24,6 +24,9 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
     useState<Array<Record<string, any>>>(defaultImages);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImageId, setSelectedImageId] = useState(null);
+
+  // Memoize the images to prevent unnecessary re-renders
+  const memoizedImages = useMemo(() => images, [images]);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -61,7 +64,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
   return (
     <div className="relative">
       <div className="grid grid-cols-3 gap-2 mb-2">
-        {images.map((image) => (
+        {memoizedImages.map((image) => (
           <div
             key={image.id}
             className={cn(

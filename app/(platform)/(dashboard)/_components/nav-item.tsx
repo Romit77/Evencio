@@ -76,11 +76,11 @@ export const NavItem = ({
       icon: <BanknoteIcon className="h-4 w-4 mr-2" />,
       href: `/organization/${organization.id}/budget`,
     },
-    {
-      label: "Speaker AI",
-      icon: <PersonStanding className="h-4 w-4 mr-2" />,
-      href: `/organization/${organization.id}/speaker-recommendations`,
-    }
+    // {
+    //   label: "Speaker AI",
+    //   icon: <PersonStanding className="h-4 w-4 mr-2" />,
+    //   href: `/organization/${organization.id}/speaker-recommendations`,
+    // }
   ];
 
   const onClick = (href: string) => {
