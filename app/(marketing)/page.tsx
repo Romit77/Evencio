@@ -14,6 +14,7 @@ import {
   Star,
   TrendingUp,
   Shield,
+  Github,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -31,6 +32,8 @@ const textFont = Poppins({
 });
 
 const MarketingPage = () => {
+  const year = new Date().getFullYear();
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -520,13 +523,15 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      <div className="relative py-32 bg-gradient-to-br from-white via-violet-50 to-purple-50 overflow-hidden">
+      {/* CTA Section with Integrated Footer */}
+      <div className="relative py-32 bg-gradient-to-br from-white via-violet-50 to-slate-100 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-violet-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-emerald-200/30 to-teal-200/30 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-3xl"></div>
         </div>
 
+        {/* Floating Elements */}
         <motion.div
           animate={{
             y: [-20, 20, -20],
@@ -566,6 +571,13 @@ const MarketingPage = () => {
           className="absolute top-40 right-40 w-3 h-3 bg-purple-400 rounded-full opacity-60"
         />
 
+        {/* Background Brand Text */}
+        <div className="pointer-events-none select-none absolute inset-0 flex items-center justify-center overflow-hidden opacity-[0.03]">
+          <h2 className="text-[20vw] md:text-[16vw] lg:text-[14vw] leading-none font-black tracking-[0.15em] md:tracking-[0.2em] text-slate-900 translate-y-[5%]">
+            EVENCIO
+          </h2>
+        </div>
+
         <div className="relative max-w-6xl mx-auto px-4 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -584,6 +596,7 @@ const MarketingPage = () => {
               <Sparkles className="w-4 h-4 mr-2" />
               Start Your Journey Today
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -711,6 +724,47 @@ const MarketingPage = () => {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+
+          {/* Integrated Footer */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            viewport={{ once: true }}
+            className="pt-20 mt-20 border-t border-slate-200/50"
+          >
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link
+                  href="https://github.com/Romit77/Evencio"
+                  target="_blank"
+                  aria-label="GitHub Repository"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-200/60 bg-white/80 text-slate-600 backdrop-blur-sm transition-all duration-300 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-lg group"
+                >
+                  <Github className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+                </Link>
+              </motion.div>
+
+              <div className="text-center">
+                <p className="text-sm text-slate-500/80 font-medium mb-2">
+                  © {year} Evencio. All rights reserved.
+                </p>
+                <p className="text-xs text-slate-400">
+                  Built with passion for better project management
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span className="text-xs text-slate-500">
+                  System operational
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

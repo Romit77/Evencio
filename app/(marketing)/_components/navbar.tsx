@@ -1,7 +1,7 @@
 import Link from "next/link";
-
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
 
 export const Navbar = () => {
   return (
@@ -11,7 +11,15 @@ export const Navbar = () => {
     >
       <div className="md:max-w-screen-2xl mx-auto flex items-center w-full justify-between">
         <Logo />
-        <div className="space-x-4 md:block md:w-auto flex items-center justify-between w-full">
+        <div className="flex items-center space-x-3">
+          <Link
+            href="https://github.com/Romit77/Evencio"
+            target="_blank"
+            aria-label="GitHub Repository"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-violet-200/60 bg-white/80 text-slate-600 transition-all duration-200 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-sm"
+          >
+            <Github className="h-4 w-4" />
+          </Link>
           <Button
             size="sm"
             variant="outline"
