@@ -523,7 +523,6 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      {/* CTA Section with Integrated Footer */}
       <div className="relative py-32 bg-gradient-to-br from-white via-violet-50 to-slate-100 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-violet-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
@@ -531,7 +530,6 @@ const MarketingPage = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-violet-100/40 to-purple-100/40 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Floating Elements */}
         <motion.div
           animate={{
             y: [-20, 20, -20],
@@ -571,7 +569,6 @@ const MarketingPage = () => {
           className="absolute top-40 right-40 w-3 h-3 bg-purple-400 rounded-full opacity-60"
         />
 
-        {/* Background Brand Text */}
         <div className="pointer-events-none select-none absolute inset-0 flex items-center justify-center overflow-hidden opacity-[0.03]">
           <h2 className="text-[20vw] md:text-[16vw] lg:text-[14vw] leading-none font-black tracking-[0.15em] md:tracking-[0.2em] text-slate-900 translate-y-[5%]">
             EVENCIO
@@ -726,7 +723,6 @@ const MarketingPage = () => {
             </motion.div>
           </motion.div>
 
-          {/* Integrated Footer */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
