@@ -247,7 +247,7 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      <div className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-violet-50 overflow-hidden">
+      <div className="relative py-16 bg-gradient-to-br from-white via-violet-50 to-slate-100 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-violet-100 rounded-full opacity-20 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-100 rounded-full opacity-20 blur-3xl"></div>
@@ -732,37 +732,72 @@ const MarketingPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
             viewport={{ once: true }}
-            className="pt-20 mt-20 border-t border-slate-200/50"
+            className="pt-16 mt-16 border-t border-slate-200/50"
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
+                className="relative group"
               >
                 <Link
                   href="https://github.com/Romit77/Evencio"
                   target="_blank"
                   aria-label="GitHub Repository"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-200/60 bg-white/80 text-slate-600 backdrop-blur-sm transition-all duration-300 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-lg group"
+                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-200/60 bg-white/80 text-slate-600 backdrop-blur-sm transition-all duration-300 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-xl group relative overflow-hidden"
                 >
-                  <Github className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Github className="h-6 w-6 group-hover:scale-110 transition-transform duration-200 relative z-10" />
                 </Link>
+                <div className="absolute -inset-2 bg-gradient-to-r from-violet-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300" />
               </motion.div>
 
-              <div className="text-center">
-                <p className="text-sm text-slate-500/80 font-medium mb-2">
+              <div className="text-center relative">
+                <motion.div
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-emerald-500/10 blur-xl opacity-50"
+                  style={{
+                    backgroundSize: "200% 100%",
+                  }}
+                />
+                <p className="text-sm text-slate-600 font-semibold mb-1 relative z-10">
                   © {year} Evencio. All rights reserved.
                 </p>
-                <p className="text-xs text-slate-400">
-                  Built with passion for better project management
+                <p className="text-xs text-slate-500 relative z-10 flex items-center justify-center gap-2">
+                  Built with
+                  <motion.span
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                    className="text-red-500"
+                  >
+                    ♥
+                  </motion.span>
+                  for better Event management
                 </p>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                <span className="text-xs text-slate-500">
-                  System operational
-                </span>
+              <div className="flex items-center gap-4 relative">
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="relative"
+                >
+                  <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+                  <div className="absolute inset-0 w-3 h-3 bg-emerald-400 rounded-full animate-ping opacity-40"></div>
+                </motion.div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-slate-600 font-medium">
+                    System operational
+                  </span>
+                  <span className="text-xs text-slate-400">99.9% uptime</span>
+                </div>
               </div>
             </div>
           </motion.div>
