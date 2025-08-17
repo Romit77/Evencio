@@ -14,6 +14,7 @@ import {
   Star,
   TrendingUp,
   Shield,
+  Github,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -31,6 +32,8 @@ const textFont = Poppins({
 });
 
 const MarketingPage = () => {
+  const year = new Date().getFullYear();
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -244,7 +247,7 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      <div className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-violet-50 overflow-hidden">
+      <div className="relative py-16 bg-gradient-to-br from-white via-violet-50 to-slate-100 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-violet-100 rounded-full opacity-20 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-100 rounded-full opacity-20 blur-3xl"></div>
@@ -520,7 +523,7 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      <div className="relative py-32 bg-gradient-to-br from-white via-violet-50 to-purple-50 overflow-hidden">
+      <div className="relative py-32 bg-gradient-to-br from-white via-violet-50 to-slate-100 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-violet-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-emerald-200/30 to-teal-200/30 rounded-full blur-3xl"></div>
@@ -566,6 +569,12 @@ const MarketingPage = () => {
           className="absolute top-40 right-40 w-3 h-3 bg-purple-400 rounded-full opacity-60"
         />
 
+        <div className="pointer-events-none select-none absolute inset-0 flex items-center justify-center overflow-hidden opacity-[0.03]">
+          <h2 className="text-[20vw] md:text-[16vw] lg:text-[14vw] leading-none font-black tracking-[0.15em] md:tracking-[0.2em] text-slate-900 translate-y-[5%]">
+            EVENCIO
+          </h2>
+        </div>
+
         <div className="relative max-w-6xl mx-auto px-4 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -584,6 +593,7 @@ const MarketingPage = () => {
               <Sparkles className="w-4 h-4 mr-2" />
               Start Your Journey Today
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -711,6 +721,81 @@ const MarketingPage = () => {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+            viewport={{ once: true }}
+            className="pt-16 mt-16 border-t border-slate-200/50"
+          >
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+                className="relative group"
+              >
+                <Link
+                  href="https://github.com/Romit77/Evencio"
+                  target="_blank"
+                  aria-label="GitHub Repository"
+                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-200/60 bg-white/80 text-slate-600 backdrop-blur-sm transition-all duration-300 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-xl group relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Github className="h-6 w-6 group-hover:scale-110 transition-transform duration-200 relative z-10" />
+                </Link>
+                <div className="absolute -inset-2 bg-gradient-to-r from-violet-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-300" />
+              </motion.div>
+
+              <div className="text-center relative">
+                <motion.div
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-emerald-500/10 blur-xl opacity-50"
+                  style={{
+                    backgroundSize: "200% 100%",
+                  }}
+                />
+                <p className="text-sm text-slate-600 font-semibold mb-1 relative z-10">
+                  © {year} Evencio. All rights reserved.
+                </p>
+                <p className="text-xs text-slate-500 relative z-10 flex items-center justify-center gap-2">
+                  Built with
+                  <motion.span
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                    className="text-red-500"
+                  >
+                    ♥
+                  </motion.span>
+                  for better Event management
+                </p>
+              </div>
+
+              <div className="flex items-center gap-4 relative">
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="relative"
+                >
+                  <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+                  <div className="absolute inset-0 w-3 h-3 bg-emerald-400 rounded-full animate-ping opacity-40"></div>
+                </motion.div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-slate-600 font-medium">
+                    System operational
+                  </span>
+                  <span className="text-xs text-slate-400">99.9% uptime</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
