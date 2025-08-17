@@ -20,7 +20,6 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "./_components/navbar";
-import { Footer } from "./_components/footer";
 
 const headingFont = localFont({
   src: "../../public/fonts/font.woff2",
@@ -245,9 +244,7 @@ const MarketingPage = () => {
         </div>
       </div>
 
-      {/* Features Section - Unique Geometric Design */}
       <div className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-violet-50 overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-violet-100 rounded-full opacity-20 blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-100 rounded-full opacity-20 blur-3xl"></div>
@@ -325,7 +322,6 @@ const MarketingPage = () => {
                 className="group relative"
               >
                 <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 overflow-hidden">
-                  {/* Gradient Background */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                   />
@@ -578,7 +574,6 @@ const MarketingPage = () => {
             viewport={{ once: true }}
             className="space-y-12"
           >
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -589,8 +584,6 @@ const MarketingPage = () => {
               <Sparkles className="w-4 h-4 mr-2" />
               Start Your Journey Today
             </motion.div>
-
-            {/* Main Heading */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -721,8 +714,6 @@ const MarketingPage = () => {
           </motion.div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
