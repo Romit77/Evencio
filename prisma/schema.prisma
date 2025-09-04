@@ -151,9 +151,9 @@ model SocialMediaPost {
   eventId     String
   platform    String    @default("LinkedIn")
   content     String    @db.Text
-  imageUrl    String?   @db.Text // Stored via UploadThing
-  postedAt    DateTime? // When it was posted
-  status      String    @default("draft") // "draft", "posted"
+  imageUrl    String?   @db.Text 
+  postedAt    DateTime? 
+  status      String    @default("draft") 
 
   event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
 
@@ -166,8 +166,8 @@ model SocialMediaPost {
 
 model Budget {
   id        String    @id @default(uuid())
-  orgId     String    @unique // One budget per organization
-  total     Float     // Total budget for the organization
+  orgId     String    @unique 
+  total     Float     
   expenses  Expense[]
 
   createdAt DateTime  @default(now())
@@ -180,8 +180,8 @@ model Expense {
   id        String    @id @default(uuid())
   budgetId  String
   budget    Budget    @relation(fields: [budgetId], references: [id], onDelete: Cascade)
-  reason    String    // Reason for the expense
-  amount    Float     // Amount spent
+  reason    String    
+  amount    Float     
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

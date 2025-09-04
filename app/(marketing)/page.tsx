@@ -739,8 +739,9 @@ const MarketingPage = () => {
                 <Link
                   href="https://github.com/Romit77/Evencio"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="GitHub Repository"
-                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-200/60 bg-white/80 text-slate-600 backdrop-blur-sm transition-all duration-300 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-xl group relative overflow-hidden"
+                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-200/60 bg-white/80 text-slate-600 backdrop-blur-sm transition-all duration-300 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:shadow-xl relative overflow-hidden cursor-pointer z-20"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Github className="h-6 w-6 group-hover:scale-110 transition-transform duration-200 relative z-10" />
